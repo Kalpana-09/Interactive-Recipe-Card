@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delightful Recipe Card</title>
+    <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="recipe-card-container">
+        <header class="recipe-header">
+            <h1 class="recipe-title">Chocolate Fudge Cake</h1>
+            <img src="Cake.webp" alt="Delicious Chocolate Fudge Cake" class="recipe-image">
+            <p class="prep-summary">Prep Time: <span id="prepTimeDisplay">20 minutes</span> | Cook Time: 35-40 minutes | Servings: 12</p>
+        </header>
+
+        <div class="recipe-section">
+            <button class="section-toggle-btn" data-target="ingredients-content">Show Ingredients</button>
+            <div id="ingredients-content" class="section-content content-collapsed">
+                <h2>Ingredients</h2>
+                <ul class="ingredient-list">
+                    <li>2 cups all-purpose flour</li>
+                    <li>2 cups granulated sugar</li>
+                    <li>¾ cup unsweetened cocoa powder (good quality)</li>
+                    <li>2 teaspoons baking soda</li>
+                    <li>1 teaspoon baking powder</li>
+                    <li>1 teaspoon salt</li>
+                    <li>1 cup buttermilk</li>
+                    <li>½ cup vegetable oil</li>
+                    <li>2 large eggs</li>
+                    <li>1 teaspoon vanilla extract</li>
+                    <li>1 cup hot water (or coffee for richer flavor)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="recipe-section">
+            <button class="section-toggle-btn" data-target="instructions-content">Show Instructions</button>
+            <div id="instructions-content" class="section-content content-collapsed">
+                <h2>Instructions</h2>
+                <div class="action-buttons">
+                    <button id="startCookingBtn" class="action-btn">Start Cooking</button>
+                    <button id="nextStepBtn" class="action-btn next-step-btn hidden">Next Step</button>
+                </div>
+                <div class="timer-display hidden">
+                    <span class="timer-label">Time Remaining: </span><span id="countdownTimer">--:--</span>
+                </div>
+                <div class="progress-bar-wrapper">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                <ol class="instruction-list">
+                    <li class="instruction-step">Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans or a 9x13 inch pan.</li>
+                    <li class="instruction-step">In a large bowl, whisk together flour, sugar, cocoa powder, baking soda, baking powder, and salt.</li>
+                    <li class="instruction-step">Add buttermilk, oil, eggs, and vanilla extract to the dry ingredients. Beat with an electric mixer on medium speed for 2 minutes.</li>
+                    <li class="instruction-step">Gradually stir in the hot water (or coffee) until the batter is smooth and well combined. The batter will be thin.</li>
+                    <li class="instruction-step">Pour the batter evenly into the prepared pans.</li>
+                    <li class="instruction-step">Bake for 30-35 minutes (9-inch rounds) or 35-40 minutes (9x13 pan), or until a wooden skewer inserted into the center comes out clean.</li>
+                    <li class="instruction-step">Let the cakes cool in the pans for 10-15 minutes on a wire rack before inversing them onto the rack to cool completely.</li>
+                    <li class="instruction-step">Once completely cool, frost with your favorite chocolate ganache or buttercream. Enjoy!</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="action-buttons-bottom">
+            <button id="printRecipeBtn" class="action-btn print-btn">Print Recipe</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>

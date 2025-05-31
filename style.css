@@ -1,0 +1,234 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f6f3;
+    color: #333;
+}
+
+/* Container */
+.recipe-card-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.recipe-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.recipe-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Image */
+.recipe-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Prep Summary */
+.prep-summary {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Section Styling */
+.recipe-section {
+    margin: 25px 0;
+}
+
+.section-toggle-btn {
+    background-color: #6c5ce7;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.section-toggle-btn:hover {
+    background-color: #4834d4;
+}
+
+/* Underline effect for clicked header (if you still want this on click) */
+.section-toggle-btn.underline {
+    text-decoration: underline;
+}
+
+/* Content Toggle Animation */
+.section-content {
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.section-content h2 {
+    margin-top: 15px;
+}
+
+.section-content.content-collapsed {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction when collapsed */
+}
+
+.section-content.content-visible {
+    max-height: 1000px; /* Adjust as needed, ensure it's large enough for content */
+    opacity: 1;
+    margin-top: 15px;
+    pointer-events: auto; /* Allows interaction when visible */
+}
+
+
+/* Ingredient List */
+.ingredient-list {
+    list-style: disc inside;
+    margin-left: 20px;
+    color: #333;
+    padding-bottom: 10px; /* Add some spacing below the list */
+}
+
+/* NEW: Hover effect for each ingredient list item */
+.ingredient-list li {
+    padding: 5px 0; /* Add some padding for better hover area */
+    transition: text-decoration 0.2s ease; /* Smooth transition for underline */
+}
+
+.ingredient-list li:hover {
+    text-decoration: underline;
+    cursor: pointer; /* Indicate it's interactive, even if not clickable */
+}
+
+
+/* Instructions */
+.instruction-list {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+}
+
+.instruction-step {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+}
+
+.instruction-step::before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background-color: #6c5ce7;
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 22px;
+}
+
+/* Highlighted current instruction step */
+.instruction-step.highlighted {
+    background-color: #e0f2f7; /* Light blue background */
+    border-left: 4px solid #0984e3; /* Blue left border */
+    padding-left: 26px; /* Adjust padding due to border */
+    transition: all 0.3s ease;
+}
+
+
+/* Action Buttons */
+.action-buttons, .action-buttons-bottom {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.action-btn {
+    background-color: #00b894;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin: 5px; /* Adjust margin for better spacing */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+    background-color: #019875;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Special Buttons */
+.print-btn {
+    background-color: #d63031;
+}
+
+.print-btn:hover {
+    background-color: #c0392b;
+}
+
+.next-step-btn {
+    background-color: #0984e3;
+}
+
+.next-step-btn:hover {
+    background-color: #0276bd;
+}
+
+/* Timer and Progress */
+.timer-display {
+    font-size: 1.1rem;
+    margin: 10px 0 15px;
+    text-align: center;
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.timer-display .timer-label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+.progress-bar-wrapper {
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin: 10px 0 20px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #00cec9;
+    transition: width 0.4s ease;
+}
+
+/* Utility */
+.hidden {
+    display: none;
+}
